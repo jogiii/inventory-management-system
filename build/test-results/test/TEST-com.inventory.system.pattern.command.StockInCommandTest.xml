@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.inventory.system.pattern.command.StockInCommandTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:04.887Z" hostname="KAJAL" time="0.654">
+  <properties/>
+  <testcase name="execute_ShouldCreateStock_WhenDoesNotExist()" classname="com.inventory.system.pattern.command.StockInCommandTest" time="0.654"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

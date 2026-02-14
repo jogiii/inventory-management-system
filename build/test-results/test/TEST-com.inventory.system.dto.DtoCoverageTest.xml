@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.inventory.system.dto.DtoCoverageTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:04.820Z" hostname="KAJAL" time="0.024">
+  <properties/>
+  <testcase name="categoryDtoCoverage()" classname="com.inventory.system.dto.DtoCoverageTest" time="0.008"/>
+  <testcase name="stockOperationDtoCoverage()" classname="com.inventory.system.dto.DtoCoverageTest" time="0.009"/>
+  <testcase name="productDtoCoverage()" classname="com.inventory.system.dto.DtoCoverageTest" time="0.007"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

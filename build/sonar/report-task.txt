@@ -1,0 +1,6 @@
+projectKey=inventory-management-system
+serverUrl=http://localhost:9000
+serverVersion=10.3.0.82913
+dashboardUrl=http://localhost:9000/dashboard?id=inventory-management-system
+ceTaskId=AZxcCog8BSgoqTcGUNns
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZxcCog8BSgoqTcGUNns
