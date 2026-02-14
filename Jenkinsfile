@@ -32,7 +32,8 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQube') {
                     // 'SonarQube' matched the name you configured in Jenkins
-                    sh './gradlew sonar'
+                    // Force the URL to use the docker service name, overriding gradle.properties
+                    sh './gradlew sonar -Dsonar.host.url=http://sonarqube:9000'
                 }
             }
         }
