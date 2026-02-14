@@ -1,9 +1,7 @@
 pipeline {
     agent any
     
-    environment {
-        // defined in Jenkins credentials or environment
-    }
+    
 
     stages {
         stage('Checkout') {
