@@ -87,4 +87,34 @@ class DtoCoverageTest {
         assertThat(dto.hashCode()).isEqualTo(dto2.hashCode());
         assertThat(dto.toString()).contains("Reason");
     }
+
+    @Test
+    void stockDtoCoverage() {
+        StockDTO dto = new StockDTO();
+        dto.setId(1L);
+        dto.setQuantity(100);
+        dto.setAvailableQuantity(90);
+        dto.setProductId(1L);
+        dto.setProductSku("SKU");
+        dto.setWarehouseId(1L);
+
+        assertThat(dto.getId()).isEqualTo(1L);
+        assertThat(dto.getQuantity()).isEqualTo(100);
+        assertThat(dto.getAvailableQuantity()).isEqualTo(90);
+        assertThat(dto.getProductId()).isEqualTo(1L);
+        assertThat(dto.getProductSku()).isEqualTo("SKU");
+        assertThat(dto.getWarehouseId()).isEqualTo(1L);
+
+        StockDTO dto2 = new StockDTO();
+        dto2.setId(1L);
+        dto2.setQuantity(100);
+        dto2.setAvailableQuantity(90);
+        dto2.setProductId(1L);
+        dto2.setProductSku("SKU");
+        dto2.setWarehouseId(1L);
+
+        assertThat(dto).isEqualTo(dto2);
+        assertThat(dto.hashCode()).isEqualTo(dto2.hashCode());
+        assertThat(dto.toString()).contains("SKU");
+    }
 }

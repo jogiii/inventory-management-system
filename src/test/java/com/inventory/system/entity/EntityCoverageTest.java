@@ -136,4 +136,29 @@ class EntityCoverageTest {
                 .build();
         assertThat(c2.getCreatedAt()).isNotNull();
     }
+
+    @Test
+    void orderEntityCoverage() {
+        Order o = new Order();
+        o.setId(1L);
+        o.setOrderNumber("ORD1");
+        o.setStatus(Order.OrderStatus.PENDING);
+        o.setProductId(1L);
+        o.setQuantity(5);
+
+        assertThat(o.getId()).isEqualTo(1L);
+        assertThat(o.getOrderNumber()).isEqualTo("ORD1");
+        assertThat(o.getStatus()).isEqualTo(Order.OrderStatus.PENDING);
+        assertThat(o.getProductId()).isEqualTo(1L);
+        assertThat(o.getQuantity()).isEqualTo(5);
+
+        Order o2 = Order.builder()
+                .id(1L)
+                .orderNumber("ORD1")
+                .status(Order.OrderStatus.PENDING)
+                .productId(1L)
+                .quantity(5)
+                .build();
+        assertThat(o2).isNotNull();
+    }
 }

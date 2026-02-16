@@ -103,4 +103,24 @@ class ProductServiceTest {
         assertThatThrownBy(() -> productService.getProduct(1L))
                 .isInstanceOf(EntityNotFoundException.class);
     }
+
+    @Test
+    void createProduct_ShouldReturnDTO_WhenCategoryIsNull() {
+        ProductDTO dto = new ProductDTO();
+        dto.setCategoryId(null);
+        dto.setPrice(BigDecimal.TEN);
+
+        Product product = new Product();
+        product.setId(1L);
+
+        when(productMapper.toEntity(dto)).thenReturn(product);
+        when(productRepository.save(any(Product.class))).thenReturn(product);
+        when(productMapper.toDTO(product)).thenReturn(dto);
+
+        ProductDTO result = productService.createProduct(dto);
+
+        assertThat(result).isNotNull();
+        verify(categoryRepository, never()).findById(anyLong());
+        verify(productRepository).save(any(Product.class));
+    }
 }
