@@ -1,8 +1,12 @@
 package com.inventory.system;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.MockedStatic;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
+
+import static org.mockito.Mockito.mockStatic;
 
 @SpringBootTest
 @ActiveProfiles("test")
@@ -15,10 +19,13 @@ class InventoryApplicationTests {
 
     @Test
     void mainMethod_Coverage() {
-        // We can't easily run the full app in a unit test but we can call the main
-        // method
-        // with mock args or just rely on contextLoads for most things.
-        // Actually, calling main() might start a real server if not careful.
-        // SpringBootTest already covers most of the app startup.
+        try (MockedStatic<SpringApplication> mocked = mockStatic(SpringApplication.class)) {
+            mocked.when(() -> SpringApplication.run(InventoryApplication.class, new String[] {}))
+                    .thenReturn(null);
+
+            InventoryApplication.main(new String[] {});
+
+            mocked.verify(() -> SpringApplication.run(InventoryApplication.class, new String[] {}));
+        }
     }
 }

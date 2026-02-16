@@ -13,6 +13,10 @@ java {
     sourceCompatibility = '17'
 }
 
+ext {
+    set('junit-jupiter.version', '5.11.0')
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
@@ -24,6 +28,12 @@ repositories {
 }
 
 dependencies {
+    // Force JUnit 5.11+ across the entire platform
+    testImplementation platform('org.junit:junit-bom:5.11.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    testRuntimeOnly 'org.junit.platform:junit-platform-engine'
+    
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
@@ -46,6 +56,18 @@ dependencies {
     testImplementation 'org.testcontainers:postgresql'
 }
 
+tasks.withType(Test).configureEach {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed", "standardOut", "standardError"
+        showStandardStreams = true
+        exceptionFormat = 'full'
+        showExceptions = true
+        showCauses = true
+        showStackTraces = true
+    }
+}
+
 tasks.named('test') {
     useJUnitPlatform {
         excludeTags 'integration'
@@ -53,7 +75,8 @@ tasks.named('test') {
     finalizedBy jacocoTestReport
 }
 
-task integrationTest(type: Test) {
+tasks.register('integrationTest', Test) {
+    group = 'verification'
     useJUnitPlatform {
         includeTags 'integration'
     }
