@@ -13,11 +13,6 @@ import static org.mockito.Mockito.mockStatic;
 class InventoryApplicationTests {
 
     @Test
-    void contextLoads() {
-        // Simple context load test
-    }
-
-    @Test
     void mainMethod_Coverage() {
         try (MockedStatic<SpringApplication> mocked = mockStatic(SpringApplication.class)) {
             mocked.when(() -> SpringApplication.run(InventoryApplication.class, new String[] {}))

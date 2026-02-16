@@ -24,7 +24,7 @@ class DtoCoverageTest {
         dto2.setDescription("Desc");
 
         assertThat(dto).isEqualTo(dto2);
-        assertThat(dto.hashCode()).isEqualTo(dto2.hashCode());
+        assertThat(dto).hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("Name");
     }
 
@@ -57,7 +57,7 @@ class DtoCoverageTest {
         dto2.setCategoryId(2L);
 
         assertThat(dto).isEqualTo(dto2);
-        assertThat(dto.hashCode()).isEqualTo(dto2.hashCode());
+        assertThat(dto).hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("Name");
     }
 
@@ -84,7 +84,7 @@ class DtoCoverageTest {
         dto2.setReason("Reason");
 
         assertThat(dto).isEqualTo(dto2);
-        assertThat(dto.hashCode()).isEqualTo(dto2.hashCode());
+        assertThat(dto).hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("Reason");
     }
 
@@ -114,7 +114,7 @@ class DtoCoverageTest {
         dto2.setWarehouseId(1L);
 
         assertThat(dto).isEqualTo(dto2);
-        assertThat(dto.hashCode()).isEqualTo(dto2.hashCode());
+        assertThat(dto).hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("SKU");
     }
 }
