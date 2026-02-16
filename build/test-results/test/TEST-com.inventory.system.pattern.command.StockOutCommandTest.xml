@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inventory.system.pattern.command.StockOutCommandTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:05.545Z" hostname="KAJAL" time="0.023">
-  <properties/>
-  <testcase name="execute_ShouldThrowException_WhenInsufficientStock()" classname="com.inventory.system.pattern.command.StockOutCommandTest" time="0.011"/>
-  <testcase name="execute_ShouldReduceStock_WhenSufficient()" classname="com.inventory.system.pattern.command.StockOutCommandTest" time="0.005"/>
-  <testcase name="execute_ShouldThrowException_WhenStockNotFound()" classname="com.inventory.system.pattern.command.StockOutCommandTest" time="0.006"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

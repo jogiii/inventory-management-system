@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inventory.system.pattern.strategy.StrategyCoverageTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:05.813Z" hostname="KAJAL" time="0.002">
-  <properties/>
-  <testcase name="logAlertStrategy_ShouldLog()" classname="com.inventory.system.pattern.strategy.StrategyCoverageTest" time="0.002"/>
-  <system-out><![CDATA[2026-02-14T17:18:05.813+05:30  WARN 31032 --- [inventory-service] [    Test worker] c.i.s.pattern.strategy.LogAlertStrategy  : LOW STOCK LOG: Product P1 - msg
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

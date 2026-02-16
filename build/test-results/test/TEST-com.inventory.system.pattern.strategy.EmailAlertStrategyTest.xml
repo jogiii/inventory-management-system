@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inventory.system.pattern.strategy.EmailAlertStrategyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:05.803Z" hostname="KAJAL" time="0.008">
-  <properties/>
-  <testcase name="emailAlertStrategy_ShouldLog()" classname="com.inventory.system.pattern.strategy.EmailAlertStrategyTest" time="0.008"/>
-  <system-out><![CDATA[2026-02-14T17:18:05.808+05:30  INFO 31032 --- [inventory-service] [    Test worker] c.i.s.p.strategy.EmailAlertStrategy      : SENDING EMAIL ALERT for Product P1: msg
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

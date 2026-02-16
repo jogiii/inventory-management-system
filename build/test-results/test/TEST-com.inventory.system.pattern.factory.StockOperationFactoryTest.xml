@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inventory.system.pattern.factory.StockOperationFactoryTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:05.715Z" hostname="KAJAL" time="0.042">
-  <properties/>
-  <testcase name="createCommand_ShouldReturnStockIn_WhenTypeIn()" classname="com.inventory.system.pattern.factory.StockOperationFactoryTest" time="0.037"/>
-  <testcase name="createCommand_ShouldReturnStockOut_WhenTypeOut()" classname="com.inventory.system.pattern.factory.StockOperationFactoryTest" time="0.002"/>
-  <testcase name="createCommand_ShouldThrow_WhenTypeNull()" classname="com.inventory.system.pattern.factory.StockOperationFactoryTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

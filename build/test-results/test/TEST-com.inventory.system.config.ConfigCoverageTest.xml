@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inventory.system.config.ConfigCoverageTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:02.999Z" hostname="KAJAL" time="0.0">
-  <properties/>
-  <testcase name="jpaConfigTests()" classname="com.inventory.system.config.ConfigCoverageTest" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

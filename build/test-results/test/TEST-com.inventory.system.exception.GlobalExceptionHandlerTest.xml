@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.inventory.system.exception.GlobalExceptionHandlerTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-02-14T11:48:04.855Z" hostname="KAJAL" time="0.014">
-  <properties/>
-  <testcase name="handleIllegalState_ShouldReturnBadRequest()" classname="com.inventory.system.exception.GlobalExceptionHandlerTest" time="0.011"/>
-  <testcase name="handleIllegalArgument_ShouldReturnBadRequest()" classname="com.inventory.system.exception.GlobalExceptionHandlerTest" time="0.0"/>
-  <testcase name="handleEntityNotFound_ShouldReturnNotFound()" classname="com.inventory.system.exception.GlobalExceptionHandlerTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
