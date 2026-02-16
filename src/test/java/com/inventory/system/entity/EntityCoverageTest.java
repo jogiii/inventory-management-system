@@ -82,7 +82,7 @@ class EntityCoverageTest {
                 .id(1L)
                 .quantity(10)
                 .build();
-        assertThat(s2.getReservedQuantity()).isEqualTo(0);
+        assertThat(s2.getReservedQuantity()).isZero();
     }
 
     @Test

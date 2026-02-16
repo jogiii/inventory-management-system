@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -38,7 +37,7 @@ public class ProductService {
     public List<ProductDTO> getAllProducts() {
         return productRepository.findAll().stream()
                 .map(productMapper::toDTO)
-                .collect(Collectors.toList());
+                .toList();
     }
 
     public ProductDTO getProduct(Long id) {

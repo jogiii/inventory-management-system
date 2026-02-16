@@ -14,17 +14,19 @@ class DtoCoverageTest {
         dto.setName("Name");
         dto.setDescription("Desc");
 
-        assertThat(dto.getId()).isEqualTo(1L);
-        assertThat(dto.getName()).isEqualTo("Name");
-        assertThat(dto.getDescription()).isEqualTo("Desc");
+        assertThat(dto)
+                .returns(1L, CategoryDTO::getId)
+                .returns("Name", CategoryDTO::getName)
+                .returns("Desc", CategoryDTO::getDescription);
 
         CategoryDTO dto2 = new CategoryDTO();
         dto2.setId(1L);
         dto2.setName("Name");
         dto2.setDescription("Desc");
 
-        assertThat(dto).isEqualTo(dto2);
-        assertThat(dto).hasSameHashCodeAs(dto2);
+        assertThat(dto)
+                .isEqualTo(dto2)
+                .hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("Name");
     }
 
@@ -39,13 +41,14 @@ class DtoCoverageTest {
         dto.setLowStockThreshold(5);
         dto.setCategoryId(2L);
 
-        assertThat(dto.getId()).isEqualTo(1L);
-        assertThat(dto.getName()).isEqualTo("Name");
-        assertThat(dto.getSku()).isEqualTo("SKU");
-        assertThat(dto.getDescription()).isEqualTo("Desc");
-        assertThat(dto.getPrice()).isEqualTo(BigDecimal.TEN);
-        assertThat(dto.getLowStockThreshold()).isEqualTo(5);
-        assertThat(dto.getCategoryId()).isEqualTo(2L);
+        assertThat(dto)
+                .returns(1L, ProductDTO::getId)
+                .returns("Name", ProductDTO::getName)
+                .returns("SKU", ProductDTO::getSku)
+                .returns("Desc", ProductDTO::getDescription)
+                .returns(BigDecimal.TEN, ProductDTO::getPrice)
+                .returns(5, ProductDTO::getLowStockThreshold)
+                .returns(2L, ProductDTO::getCategoryId);
 
         ProductDTO dto2 = new ProductDTO();
         dto2.setId(1L);
@@ -56,8 +59,9 @@ class DtoCoverageTest {
         dto2.setLowStockThreshold(5);
         dto2.setCategoryId(2L);
 
-        assertThat(dto).isEqualTo(dto2);
-        assertThat(dto).hasSameHashCodeAs(dto2);
+        assertThat(dto)
+                .isEqualTo(dto2)
+                .hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("Name");
     }
 
@@ -70,11 +74,12 @@ class DtoCoverageTest {
         dto.setType(StockOperationDTO.OperationType.IN);
         dto.setReason("Reason");
 
-        assertThat(dto.getProductId()).isEqualTo(1L);
-        assertThat(dto.getWarehouseId()).isEqualTo(2L);
-        assertThat(dto.getQuantity()).isEqualTo(10);
-        assertThat(dto.getType()).isEqualTo(StockOperationDTO.OperationType.IN);
-        assertThat(dto.getReason()).isEqualTo("Reason");
+        assertThat(dto)
+                .returns(1L, StockOperationDTO::getProductId)
+                .returns(2L, StockOperationDTO::getWarehouseId)
+                .returns(10, StockOperationDTO::getQuantity)
+                .returns(StockOperationDTO.OperationType.IN, StockOperationDTO::getType)
+                .returns("Reason", StockOperationDTO::getReason);
 
         StockOperationDTO dto2 = new StockOperationDTO();
         dto2.setProductId(1L);
@@ -83,8 +88,9 @@ class DtoCoverageTest {
         dto2.setType(StockOperationDTO.OperationType.IN);
         dto2.setReason("Reason");
 
-        assertThat(dto).isEqualTo(dto2);
-        assertThat(dto).hasSameHashCodeAs(dto2);
+        assertThat(dto)
+                .isEqualTo(dto2)
+                .hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("Reason");
     }
 
@@ -98,12 +104,13 @@ class DtoCoverageTest {
         dto.setProductSku("SKU");
         dto.setWarehouseId(1L);
 
-        assertThat(dto.getId()).isEqualTo(1L);
-        assertThat(dto.getQuantity()).isEqualTo(100);
-        assertThat(dto.getAvailableQuantity()).isEqualTo(90);
-        assertThat(dto.getProductId()).isEqualTo(1L);
-        assertThat(dto.getProductSku()).isEqualTo("SKU");
-        assertThat(dto.getWarehouseId()).isEqualTo(1L);
+        assertThat(dto)
+                .returns(1L, StockDTO::getId)
+                .returns(100, StockDTO::getQuantity)
+                .returns(90, StockDTO::getAvailableQuantity)
+                .returns(1L, StockDTO::getProductId)
+                .returns("SKU", StockDTO::getProductSku)
+                .returns(1L, StockDTO::getWarehouseId);
 
         StockDTO dto2 = new StockDTO();
         dto2.setId(1L);
@@ -113,8 +120,9 @@ class DtoCoverageTest {
         dto2.setProductSku("SKU");
         dto2.setWarehouseId(1L);
 
-        assertThat(dto).isEqualTo(dto2);
-        assertThat(dto).hasSameHashCodeAs(dto2);
+        assertThat(dto)
+                .isEqualTo(dto2)
+                .hasSameHashCodeAs(dto2);
         assertThat(dto.toString()).contains("SKU");
     }
 }
